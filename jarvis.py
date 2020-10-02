@@ -86,6 +86,20 @@ if __name__ == "__main__":
              url = query.replace('open', " ")
              speak(f"opening for you, {url}")
              webbrowser.open(url)
+        elif 'open youtube' in query: 
+            speak("Here you go to Youtube\n") 
+            webbrowser.open("youtube.com")
+        elif 'send a mail' in query: 
+            try: 
+                speak("What should I say?") 
+                content = takeCommand() 
+                speak("whome should i send") 
+                to = input()     
+                sendEmail(to, content) 
+                speak("Email has been sent !") 
+            except Exception as e: 
+                print(e) 
+                speak("I am not able to send this email")            
         elif 'get lost' in query:
             speak("Goodbye boss.")
             exit()
